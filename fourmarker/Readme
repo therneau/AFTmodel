@@ -1,0 +1,11 @@
+This is an addition to the original archive, for an application of the AFT
+approach to a data set with four markers: amyloid PET, tau PET, white matter
+hyperintensity, and fractional anisotropy.
+
+  stanfit.R:  R code to run the stan fit, on simulated data
+  simdata.rds: Simulated data
+  aft4.stan:  The stan program, which is called by stanfit.R
+
+Note the final line of stanfit.R, which is save the result to disk.  The fit can
+take a long while to run (over a day).  A later program will read this in to 
+produce tables and graphs; usually many times as a paper is refined.
