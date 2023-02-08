@@ -9,3 +9,35 @@ hyperintensity, and fractional anisotropy.
 Note the final line of stanfit.R, which is save the result to disk.  The fit can
 take a long while to run (over a day).  A later program will read this in to 
 produce tables and graphs; usually many times as a paper is refined.
+
+simdata.rds is a stacked dataset with multiple observations per person, per 
+outcome.  The number of measurements will vary from person to person.  For 
+example, one person might have two outcomes measured twice each while another 
+person all four outcomes measured three times each.  This dataset has 9 
+variables:
+
+  id       unique subject identifier
+
+  y        outcome value 
+
+  outcome  a number from 1 to 4 where
+           1=log of Amyloid PET SUVR
+           2=log of tau PET SUVR
+           3=WMH%
+           4=1 - FA in the GCC
+
+  age      age at measurement in years
+
+  male     male sex
+           1=male, 0=female
+
+  apoepos  APOE 𝜀4 carrier 
+           1=carrier, 0=not carrier or unknown
+
+  apoemiss missing/unknown APOE genotype 
+           1=unknown, 0=carrier or not carrier
+
+  educ     years of education
+
+  adrc     referred to ADRC
+           1=referred, 0=not referred
